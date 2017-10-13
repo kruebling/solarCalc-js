@@ -29,7 +29,7 @@ var Mortal = exports.Mortal = function () {
   _createClass(Mortal, [{
     key: 'ageToSeconds',
     value: function ageToSeconds() {
-      var seconds = this.age * 31536000;
+      var seconds = this.year * 31536000;
       return seconds;
     }
 

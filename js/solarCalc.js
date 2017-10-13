@@ -12,7 +12,7 @@ export class Mortal{
 
   //Determines a persons age in seconds
   ageToSeconds(){
-    let seconds = (this.age * 31536000);
+    let seconds = (this.year * 31536000);
     return seconds;
   }
 
