@@ -39,7 +39,8 @@ var Mortal = exports.Mortal = function () {
     key: 'calcDiff',
     value: function calcDiff() {
       var start = this.age;
-      var end = moment();
+      var end = moment('YYYY M D');
+      return start.diff(end, 'seconds');
     }
 
     //Return the age of a human in Mercury years
