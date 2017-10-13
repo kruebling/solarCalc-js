@@ -1,23 +1,23 @@
 export class Calc{
-  constructor(birthday, age, gender,){
+  constructor(birthday, age, gender, country){
     this.birthday = birthday;
     this.gender = gender
     this.age = age;
+    this.country = country;
   }
 
   //Take a person’s age in years and convert it into seconds.
   convertSeconds(years){
-    let years = (years * 31536000);
+    let years = this.age;
+    let seconds = (years * 31536000);
     return years;
   }
 
   //Take two dates and determine the difference, in seconds, between the two
-  calc_diff(){
-    let start = moment(this.birthday);
-    let end = moment()
-    var difference = moment.duration(start.diff(end));
-    var seconds = duration.asSeconds();
-    return seconds;
+  calc_diff(date){
+    let day = (day * 86400);
+    let month = (day * month);
+    let year = (year)
   }
 
   //Return the age of a human in Mercury years
@@ -39,5 +39,7 @@ export class Calc{
   jupiter(){
     return this.age * 11.86
   };
+
+  //life expectancy
 
 }
