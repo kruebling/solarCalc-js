@@ -1,0 +1,22 @@
+{
+  "name": "solar_calc",
+  "description": "A Solar Age Calculator",
+  "main": "index.js",
+  "authors": [
+    "Keegan Ruebling"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "v4.0.0-beta",
+    "moment": "^2.19.1"
+  }
+}
