@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 export class Calc{
   constructor(birthday, age, gender, country){
     this.birthday = birthday;
@@ -8,16 +10,13 @@ export class Calc{
 
   //Take a person’s age in years and convert it into seconds.
   convertSeconds(years){
-    let years = this.age;
     let seconds = (years * 31536000);
-    return years;
+    return seconds;
   }
 
   //Take two dates and determine the difference, in seconds, between the two
-  calc_diff(date){
-    let day = (day * 86400);
-    let month = (day * month);
-    let year = (year)
+  calc_diff(){
+    let start = this.birthday
   }
 
   //Return the age of a human in Mercury years
