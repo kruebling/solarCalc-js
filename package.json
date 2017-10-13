@@ -1,0 +1,14 @@
+{
+  "name": "solar_calc",
+  "version": "1.0.0",
+  "description": "A Solar Age Calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Keegan Ruebling",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^4.0.2"
+  }
+}
