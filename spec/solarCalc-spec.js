@@ -1,1 +1,1 @@
-import { Calc } from './../js/solarCalc.js'
+import { Mortal } from './../js/solarCalc.js'
