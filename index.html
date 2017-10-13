@@ -9,17 +9,28 @@
   </head>
   <title>Solar Age Calculator</title>
   <body>
+    <div class="jumbotron">
+      <h1>SOLAR AGE CALCULATOR</h1>
+    </div>
     <div class="container">
-      <h2>The current time is:</h2>
-      <div id="c_time">
+      <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+        <div class="card-block">
+          <h2 class="card-title">The current time is:</h2>
+          <div class="card-text" id="c_time">
+          </div>
+        </div>
+      </div><br><br>
+      <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+        <div class="card-block">
+          <form id="age" action="index.html" method="post">
+            <h2 class="card-title">Enter your Age (DD/MM/YYYY)</h2>
+            <input class="card-text" type="number" id="day" placeholder="DD" require>
+            <input class="card-text" type="number" id="day" placeholder="MM" require>
+            <input class="card-text" type="number" id="day" placeholder="YYYY" require>
+            <button type="button" class="btn btn-info" name="button">Convert!</button>
+          </form>
+        </div>
       </div>
-      <form id="age" action="index.html" method="post">
-        <h2>Enter your Age (DD/MM/YYYY)</h2>
-        <input type="number" id="day" placeholder="DD" require>
-        <input type="number" id="day" placeholder="MM" require>
-        <input type="number" id="day" placeholder="YYYY" require>
-        <button type="button" class="btn btn-info" name="button">Convert!</button>
-      </form>
     </div>
   </body>
 </html>
