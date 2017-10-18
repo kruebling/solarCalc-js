@@ -12,15 +12,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var moment = require('moment');
 
 var Mortal = exports.Mortal = function () {
-  function Mortal(day, month, year, gender, country) {
+  function Mortal(day, month, year, age, gender) {
     _classCallCheck(this, Mortal);
 
     this.day = day;
     this.month = month;
     this.year = year;
-    this.gender = gender;
-    this.country = country;
-    this.age = moment([this.year, this.month, this.day]).fromNow(true);
+    this.start = new Date(this.year, this.month, this.day);
+    this.seconds = 0;
+    this.age = age;
   }
 
   //Determines a persons age in seconds
@@ -29,7 +29,7 @@ var Mortal = exports.Mortal = function () {
   _createClass(Mortal, [{
     key: 'ageToSeconds',
     value: function ageToSeconds() {
-      var seconds = this.year * 31536000;
+      var seconds = Math.floor(this.age * 31536000);
       return seconds;
     }
 
@@ -38,9 +38,10 @@ var Mortal = exports.Mortal = function () {
   }, {
     key: 'calcDiff',
     value: function calcDiff() {
-      var start = this.age;
-      var end = moment('YYYY M D');
-      return start.diff(end, 'seconds');
+      var end = Date.parse(moment().format()) / 1000;
+      var start = Date.parse(this.start) / 1000;
+      this.seconds = end - start;
+      return this.seconds;
     }
 
     //Return the age of a human in Mercury years
@@ -48,7 +49,8 @@ var Mortal = exports.Mortal = function () {
   }, {
     key: 'mercury',
     value: function mercury() {
-      return this.age * 0.24;
+      var mercAge = this.age * 0.24;
+      return mercAge;
     }
 
     //Return the age of a human in Venus years
@@ -56,7 +58,8 @@ var Mortal = exports.Mortal = function () {
   }, {
     key: 'venus',
     value: function venus() {
-      return this.age * 0.62;
+      var venAge = this.age * 0.62;
+      return venAge;
     }
 
     //Return the age of a human in Mars years
@@ -64,7 +67,8 @@ var Mortal = exports.Mortal = function () {
   }, {
     key: 'mars',
     value: function mars() {
-      return this.age * 1.88;
+      var marsAge = this.age * 1.88;
+      return marsAge;
     }
 
     //Return the age of a human in Jupiter years
@@ -72,10 +76,14 @@ var Mortal = exports.Mortal = function () {
   }, {
     key: 'jupiter',
     value: function jupiter() {
-      return this.age * 11.86;
+      var jupAge = this.age * 11.86;
+      return jupAge;
     }
 
     //life expectancy
+    // lifeExpectancy(){
+    //   if (this.age < 81
+    // }
 
   }]);
 
@@ -4605,6 +4613,30 @@ var _solarCalc = require('./../js/solarCalc.js');
 
 $(document).ready(function () {
   $('#c_time').text(moment().format('MM / DD / YYYY'));
+
+  $('#input').submit(function (event) {
+    event.preventDefault();
+    var day = parseInt($('#day').val());
+    var month = parseInt($('#month').val());
+    var year = parseInt($('#year').val());
+    var age = $('#age').val();
+    var gender = $('#gender').val();
+    var user = new _solarCalc.Mortal(day, month, year, age, gender);
+
+    user.ageToSeconds();
+    user.calcDiff();
+
+    var mercury = user.mercury().toFixed(2);
+    var venus = user.venus().toFixed(2);
+    var mars = user.mars().toFixed(2);
+    var jupiter = user.jupiter().toFixed(2);
+
+    $("#results").html('<h1>You Are ' + user.seconds + ' seconds old!</h1>');
+    $("#mercury").html('<h1>You Are ' + mercury + ' years old on Mercury...</h1>');
+    $("#venus").html('<h1>You Are ' + venus + ' years old on Venus...</h1>');
+    $("#mars").html('<h1>You Are ' + mars + ' years old on Mars...</h1>');
+    $("#jupiter").html('<h1>You Are ' + jupiter + ' years old on Jupiter...</h1>');
+  });
 });
 
 },{"./../js/solarCalc.js":1}]},{},[3]);

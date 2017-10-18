@@ -3,7 +3,7 @@ import { Mortal } from './../js/solarCalc.js';
 describe('Mortal', () => {
   let test;
   beforeEach(() => {
-    test = new Mortal(1, 2, 1992, 25, 'male', 'U.States');
+    test = new Mortal(1, 2, 1992, 25);
   });
 
   //day, month, year, gender, country

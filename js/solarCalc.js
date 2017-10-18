@@ -1,13 +1,13 @@
 var moment = require('moment');
 
 export class Mortal{
-  constructor(day, month, year, age, gender, country){
+  constructor(day, month, year, age, gender){
     this.day = day;
     this.month = month;
     this.year = year;
+    this.start = new Date(this.year, this.month, this.day);
+    this.seconds = 0;
     this.age = age;
-    this.gender = gender;
-    this.country = country;
   }
 
   //Determines a persons age in seconds
@@ -17,10 +17,11 @@ export class Mortal{
   }
 
   //Take two dates and determine the difference, in seconds, between the two
-  calcDiff(start, end){
-    start = new Date(start.year, start.month, start.day, 0, 0, 0, 0);
-    end = new Date(end.year, end.month, end.day, 0, 0, 0, 0);
-    return Math.abs((start.getTime() - end.getTime()) / 1000);
+  calcDiff(){
+    let end = Date.parse(moment().format())/1000;
+    let start = Date.parse(this.start)/1000;
+    this.seconds = end - start;
+    return this.seconds;
   }
 
   //Return the age of a human in Mercury years
