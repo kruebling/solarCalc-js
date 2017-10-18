@@ -8,12 +8,13 @@ $(document).ready(function(){
     let day = parseInt($('#day').val());
     let month = parseInt($('#month').val());
     let year = parseInt($('#year').val());
-    let age = ($('#age').val());
-    let gender = ($('#gender').val());
+    let age = $('#age').val();
+    let gender = $('#gender').val();
     let user = new Mortal(day, month, year, age, gender);
 
     user.ageToSeconds();
     user.calcDiff();
+    user.lifeExpectancy();
 
     let mercury = user.mercury().toFixed(2);
     let venus = user.venus().toFixed(2);
@@ -25,6 +26,7 @@ $(document).ready(function(){
     $("#venus").html(`<h1>You Are ${venus} years old on Venus...</h1>`);
     $("#mars").html(`<h1>You Are ${mars} years old on Mars...</h1>`);
     $("#jupiter").html(`<h1>You Are ${jupiter} years old on Jupiter...</h1>`);
+
 
   });
 });

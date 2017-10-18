@@ -8,6 +8,8 @@ export class Mortal{
     this.start = new Date(this.year, this.month, this.day);
     this.seconds = 0;
     this.age = age;
+    this.expectancy = 0;
+    this.gender = gender;
   }
 
   //Determines a persons age in seconds
@@ -49,7 +51,15 @@ export class Mortal{
   }
 
   //life expectancy
-  // lifeExpectancy(){
-  //   if (this.age < 81
-  // }
+  lifeExpectancy(){
+    if ((this.gender == 'male') && (this.age < 81)){
+      this.expectancy = (81 - this.age);
+      return this.expectancy;
+    }else if ((this.gender == 'female') && (this.age < 78)) {
+      this.expectancy = (78 - this.age);
+      return this.expectancy;
+    }else {
+      return "Congratulations! You're older than the life expectancy for your gender!";
+    }
+  }
 }
