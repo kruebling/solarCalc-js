@@ -28,25 +28,25 @@ export class Mortal{
 
   //Return the age of a human in Mercury years
   mercury(){
-    let mercAge = (this.age * (0.24));
+    let mercAge = (this.age / (0.24)).toFixed(2);
     return mercAge;
   }
 
   //Return the age of a human in Venus years
   venus(){
-    let venAge = (this.age * (0.62));
+    let venAge = (this.age / (0.62)).toFixed(2);
     return venAge;
   }
 
   //Return the age of a human in Mars years
   mars(){
-    let marsAge = (this.age * (1.88));
+    let marsAge = (this.age / (1.88)).toFixed(2);
     return marsAge;
   }
 
   //Return the age of a human in Jupiter years
   jupiter(){
-    let jupAge = (this.age * (11.86));
+    let jupAge = (this.age / (11.86)).toFixed(2);
     return jupAge;
   }
 

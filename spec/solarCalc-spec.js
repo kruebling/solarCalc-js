@@ -15,24 +15,19 @@ describe('Mortal', () => {
     expect(test.ageToSeconds()).toEqual(788400000);
   });
 
-  //Compares given input with current time, unsure how to pass.
-  // it('calculates the time in seconds between a given moment and now', () => {
-  //   expect(test.calcDiff()).toEqual(Number);
-  // });
-
   it('converts a mortals age from Earth years to Mercury years', () => {
-    expect(test.mercury()).toEqual(6.00);
+    expect(test.mercury()).toEqual('104.17');
   });
 
   it('converts a mortals age from Earth years to Venus years', () => {
-    expect(test.venus()).toEqual(15.50);
+    expect(test.venus()).toEqual('40.32');
   });
 
   it('converts a mortals age from Earth years to Mars years', () => {
-    expect(test.mars()).toEqual(47.00);
+    expect(test.mars()).toEqual('13.30');
   });
 
   it('converts a mortals age from Earth years to Jupiter years', () => {
-    expect(test.jupiter()).toEqual(296.50);
+    expect(test.jupiter()).toEqual('2.11');
   });
 });
